@@ -4,8 +4,7 @@
   "description": "Generate psychology tests that can be used in games, marketing campaigns and more.",
   "main": "dist/index.js",
   "scripts": {
-    "start": "node dist/index.js",
-    "start:dev": "nodemon src/example.ts",
+    "start": "node dist/src/psych.js",
     "build": "tsc",
     "test": "jest"
   },
@@ -39,6 +38,7 @@
   "dependencies": {
     "@ai-sdk/openai": "^0.0.44",
     "ai": "^3.3.5",
+    "commander": "^12.1.0",
     "dotenv": "^16.4.5",
     "fetch": "^1.1.0",
     "nanoid": "^3.3.7",
