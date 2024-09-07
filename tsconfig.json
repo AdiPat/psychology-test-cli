@@ -11,8 +11,12 @@
     "paths": {
       "*": ["node_modules/*"]
     },
-    "types": ["node", "jest"]
+    "jsx": "react",
+    "types": ["react", "node"],
+    "typeRoots": ["node_modules/@types"],
+    "skipLibCheck": true,
+    "noEmitOnError": false
   },
-  "include": ["src/**/*.ts", "tests/**/*.ts"],
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
 }
