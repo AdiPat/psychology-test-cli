@@ -10,7 +10,7 @@ import {
   TestTopic,
   UserResponse,
 } from "../models";
-import { generateValidationResponse } from "./validator";
+import { processInputs } from "./input-processor";
 
 const AI_MODEL = openai("gpt-4o");
 
@@ -97,7 +97,7 @@ async function evaluateScorecard(
 }
 
 const JungAI = {
-  generateValidationResponse,
+  processInputs,
 };
 
 export { JungAI };

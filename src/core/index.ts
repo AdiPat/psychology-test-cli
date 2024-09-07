@@ -40,7 +40,14 @@ async function run() {
     process.exit(0);
   }
 
-  await JungAI.generateValidationResponse({ name, description });
+  const inputProcessorResult = await JungAI.processInputs({
+    name,
+    description,
+  });
+
+  console.log("Input Processor Result: ", inputProcessorResult);
+
+  process.exit(0);
 }
 
 export { run };

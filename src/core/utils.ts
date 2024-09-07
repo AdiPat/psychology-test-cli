@@ -2,6 +2,21 @@ import { openai } from "@ai-sdk/openai";
 import { generateText } from "ai";
 import { customAlphabet } from "nanoid";
 
+import readline from "readline";
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+function questionAsync(query: string): Promise<string> {
+  return new Promise((resolve) => {
+    rl.question(query, (answer) => {
+      resolve(answer);
+    });
+  });
+}
+
 function cleanGPTJson(json: string): string {
   if (!json || json.length === 0) {
     return "";
@@ -53,6 +68,7 @@ const Utils = {
   isValidURL,
   parseJSON,
   generateRandomIntID,
+  questionAsync,
 };
 
 export { Utils };
