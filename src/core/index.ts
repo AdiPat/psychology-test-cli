@@ -1,6 +1,7 @@
 import { Command } from "commander";
+import { JungAI } from "./ai";
 
-function run() {
+async function run() {
   const program = new Command();
 
   program
@@ -39,9 +40,7 @@ function run() {
     process.exit(0);
   }
 
-  console.log("Name:", name);
-  console.log("Description:", description);
-  console.log("Type:", generate);
+  await JungAI.generateValidationResponse({ name, description });
 }
 
 export { run };
